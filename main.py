@@ -1,4 +1,5 @@
 import tkinter as tk
+from math import sqrt
 
 calculation = ""
 
@@ -29,11 +30,11 @@ def clear_calculation():
     pass
 
 root = tk.Tk()
-root.geometry("300x275")
+root.geometry("375x275")
 
 # Create display of calculator
-text_result = tk.Text(root, height=2, width=16, font=("Ariel", 24))
-text_result.grid(columnspan=5)
+text_result = tk.Text(root, height=2, width=20, font=("Ariel", 24))
+text_result.grid(columnspan=6)
 # Calculator buttons with their function correlated to the name
 btn_1 = tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("Ariel", 14))
 btn_1.grid(row=2, column=1)
@@ -64,6 +65,8 @@ btn_mul = tk.Button(root, text="*", command=lambda: add_to_calculation("*"), wid
 btn_mul.grid(row=4, column=4)
 btn_div = tk.Button(root, text="/", command=lambda: add_to_calculation("/"), width=5, font=("Ariel", 14))
 btn_div.grid(row=5, column=4)
+btn_sqrt = tk.Button(root, text="sqrt", command=lambda: add_to_calculation("sqrt("), width=5, font=("Ariel", 14))
+btn_sqrt.grid(row=2, column=5)
 btn_open = tk.Button(root, text="(", command=lambda: add_to_calculation("("), width=5, font=("Ariel", 14))
 btn_open.grid(row=5, column=1)
 btn_close = tk.Button(root, text=")", command=lambda: add_to_calculation(")"), width=5, font=("Ariel", 14))
