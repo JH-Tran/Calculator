@@ -1,29 +1,38 @@
 import tkinter as tk
+from tkinter import DISABLED, NORMAL, PhotoImage
 from math import sqrt
 
 calculation = ""
 
 def add_to_calculation(symbol):
+    text_result["state"] = NORMAL
     global calculation
     calculation += str(symbol)
     text_result.delete(1.0, "end")
     text_result.insert(1.0, calculation)
+    text_result["state"] = DISABLED
 
 def evaluate_calculation():
     global calculation
     try:
+        text_result["state"] = NORMAL
         calculation = str(eval(calculation))
         text_result.delete(1.0, "end")
         text_result.insert(1.0, calculation)
+        text_result["state"] = DISABLED
     except:
         clear_field()
+        text_result["state"] = NORMAL
         text_result.insert(1.0, "Error")
+        text_result["state"] = DISABLED
         pass
 
 def clear_field():
+    text_result["state"] = NORMAL
     global calculation
     calculation = ""
     text_result.delete(1.0, "end")
+    text_result["state"] = DISABLED
     pass
 
 def clear_calculation():
@@ -32,9 +41,15 @@ def clear_calculation():
 root = tk.Tk()
 root.geometry("375x275")
 
+root.title("Calculator")
+img = PhotoImage(file="calculator.png")
+root.iconphoto(False,img)
+
 # Create display of calculator
-text_result = tk.Text(root, height=2, width=20, font=("Ariel", 24))
+text_result = tk.Text(root, height=2, width=20, font=("Ariel", 24), )
 text_result.grid(columnspan=6)
+text_result["state"] = DISABLED
+
 # Calculator buttons with their function correlated to the name
 btn_1 = tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("Ariel", 14))
 btn_1.grid(row=2, column=1)
