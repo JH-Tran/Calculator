@@ -39,6 +39,7 @@ def clear_calculation():
     pass
 
 root = tk.Tk()
+root.configure(bg='#3a484a')
 root.geometry("375x275")
 
 # Change the title and image of the application
@@ -47,7 +48,7 @@ img = PhotoImage(file="calculator.png")
 root.iconphoto(False,img)
 
 # Create display of calculator
-text_result = tk.Text(root, height=2, width=20, font=("Ariel", 24), )
+text_result = tk.Text(root, height=2, width=20, font=("Ariel", 24), bg='#2fc8b4', fg='white')
 text_result.grid(columnspan=6)
 text_result["state"] = DISABLED
 
@@ -77,9 +78,9 @@ btn_plus = tk.Button(root, text="+", command=lambda: add_to_calculation("+"), wi
 btn_plus.grid(row=2, column=4)
 btn_minus = tk.Button(root, text="-", command=lambda: add_to_calculation("-"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
 btn_minus.grid(row=2, column=5)
-btn_mul = tk.Button(root, text="*", command=lambda: add_to_calculation("*"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
+btn_mul = tk.Button(root, text="×", command=lambda: add_to_calculation("*"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
 btn_mul.grid(row=3, column=4)
-btn_div = tk.Button(root, text="/", command=lambda: add_to_calculation("/"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
+btn_div = tk.Button(root, text="÷", command=lambda: add_to_calculation("/"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
 btn_div.grid(row=3, column=5)
 btn_sqrt = tk.Button(root, text="sqrt", command=lambda: add_to_calculation("sqrt("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
 btn_sqrt.grid(row=4, column=4)
@@ -88,10 +89,10 @@ btn_open.grid(row=5, column=1)
 btn_close = tk.Button(root, text=")", command=lambda: add_to_calculation(")"), width=5, font=("Ariel", 14), bg='#D2D2D2', fg='#555555')
 btn_close.grid(row=5, column=3)
 # Clear text field
-btn_clear = tk.Button(root, text="c", command=clear_field, width=11, font=("Ariel", 14), bg='#dc5a64', fg='white')
+btn_clear = tk.Button(root, text="c", command=clear_field, width=12, font=("Ariel", 14), bg='#dc5a64', fg='white')
 btn_clear.grid(row=6, column=1, columnspan=2)
 # Evaluate the text field calculation
-btn_equals = tk.Button(root, text="=", command=evaluate_calculation, width=11, font=("Ariel", 14), bg='#dc5a64', fg='white')
-btn_equals.grid(row=6, column=3, columnspan=2)
+btn_equals = tk.Button(root, text="=", command=evaluate_calculation, width=12, font=("Ariel", 14), bg='#dc5a64', fg='white')
+btn_equals.grid(row=6, column=4, columnspan=2)
 
 root.mainloop()
