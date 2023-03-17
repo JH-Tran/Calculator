@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import DISABLED, NORMAL, PhotoImage
-from math import sqrt
+from math import *
 
 calculation = ""
 
@@ -74,6 +74,7 @@ btn_9.grid(row=4, column=3)
 btn_0 = tk.Button(root, text="0", command=lambda: add_to_calculation(0), width=5, font=("Ariel", 14), bg='#D2D2D3', fg='#555555')
 btn_0.grid(row=5, column=2)
 # Calculator operations
+# Yellow section
 btn_plus = tk.Button(root, text="+", command=lambda: add_to_calculation("+"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
 btn_plus.grid(row=2, column=4)
 btn_minus = tk.Button(root, text="-", command=lambda: add_to_calculation("-"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
@@ -82,12 +83,20 @@ btn_mul = tk.Button(root, text="×", command=lambda: add_to_calculation("*"), wi
 btn_mul.grid(row=3, column=4)
 btn_div = tk.Button(root, text="÷", command=lambda: add_to_calculation("/"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
 btn_div.grid(row=3, column=5)
+
+# Green section
 btn_sqrt = tk.Button(root, text="sqrt", command=lambda: add_to_calculation("sqrt("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
 btn_sqrt.grid(row=4, column=4)
+btn_sqrt = tk.Button(root, text="pow", command=lambda: add_to_calculation("pow("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
+btn_sqrt.grid(row=4, column=5)
+
+# Grey
 btn_open = tk.Button(root, text="(", command=lambda: add_to_calculation("("), width=5, font=("Ariel", 14), bg='#D2D2D2', fg='#555555')
 btn_open.grid(row=5, column=1)
 btn_close = tk.Button(root, text=")", command=lambda: add_to_calculation(")"), width=5, font=("Ariel", 14), bg='#D2D2D2', fg='#555555')
 btn_close.grid(row=5, column=3)
+btn_close = tk.Button(root, text=",", command=lambda: add_to_calculation(","), width=5, font=("Ariel", 14), bg='#D2D2D2', fg='#555555')
+btn_close.grid(row=6, column=3)
 # Clear text field
 btn_clear = tk.Button(root, text="c", command=clear_field, width=12, font=("Ariel", 14), bg='#dc5a64', fg='white')
 btn_clear.grid(row=6, column=1, columnspan=2)
