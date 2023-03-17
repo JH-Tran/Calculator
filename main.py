@@ -89,6 +89,10 @@ btn_sqrt = tk.Button(root, text="sqrt", command=lambda: add_to_calculation("sqrt
 btn_sqrt.grid(row=4, column=4)
 btn_sqrt = tk.Button(root, text="pow", command=lambda: add_to_calculation("pow("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
 btn_sqrt.grid(row=4, column=5)
+btn_sqrt = tk.Button(root, text="log", command=lambda: add_to_calculation("log("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
+btn_sqrt.grid(row=5, column=4)
+btn_sqrt = tk.Button(root, text="π", command=lambda: add_to_calculation("pi"), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
+btn_sqrt.grid(row=5, column=5)
 
 # Grey
 btn_open = tk.Button(root, text="(", command=lambda: add_to_calculation("("), width=5, font=("Ariel", 14), bg='#D2D2D2', fg='#555555')
