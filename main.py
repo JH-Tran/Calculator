@@ -40,7 +40,7 @@ def clear_calculation():
 
 root = tk.Tk()
 root.configure(bg='#3a484a')
-root.geometry("375x275")
+root.geometry("500x275")
 
 # Change the title and image of the application
 root.title("Calculator")
@@ -48,8 +48,8 @@ img = PhotoImage(file="calculator.png")
 root.iconphoto(False,img)
 
 # Create display of calculator
-text_result = tk.Text(root, height=2, width=20, font=("Ariel", 24), bg='#2fc8b4', fg='white')
-text_result.grid(columnspan=6)
+text_result = tk.Text(root, height=2, width=28, font=("Ariel", 24), bg='#2fc8b4', fg='white')
+text_result.grid(columnspan=10)
 text_result["state"] = DISABLED
 
 # Calculator buttons with their function correlated to the name
@@ -83,9 +83,15 @@ btn_mul = tk.Button(root, text="×", command=lambda: add_to_calculation("*"), wi
 btn_mul.grid(row=3, column=4)
 btn_div = tk.Button(root, text="÷", command=lambda: add_to_calculation("/"), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
 btn_div.grid(row=3, column=5)
+btn_div = tk.Button(root, text="sin", command=lambda: add_to_calculation("sin("), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
+btn_div.grid(row=2, column=6)
+btn_div = tk.Button(root, text="cos", command=lambda: add_to_calculation("cos("), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
+btn_div.grid(row=2, column=7)
+btn_div = tk.Button(root, text="tan", command=lambda: add_to_calculation("tan("), width=5, font=("Ariel", 14), bg='#ffe380', fg='#555555')
+btn_div.grid(row=3, column=6)
 
 # Green section
-btn_sqrt = tk.Button(root, text="sqrt", command=lambda: add_to_calculation("sqrt("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
+btn_sqrt = tk.Button(root, text="√", command=lambda: add_to_calculation("sqrt("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
 btn_sqrt.grid(row=4, column=4)
 btn_sqrt = tk.Button(root, text="pow", command=lambda: add_to_calculation("pow("), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
 btn_sqrt.grid(row=4, column=5)
@@ -93,6 +99,8 @@ btn_sqrt = tk.Button(root, text="log", command=lambda: add_to_calculation("log("
 btn_sqrt.grid(row=5, column=4)
 btn_sqrt = tk.Button(root, text="π", command=lambda: add_to_calculation("pi"), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
 btn_sqrt.grid(row=5, column=5)
+btn_sqrt = tk.Button(root, text="e", command=lambda: add_to_calculation("e"), width=5, font=("Ariel", 14), bg='#2fc8b4', fg='white')
+btn_sqrt.grid(row=4, column=6)
 
 # Grey
 btn_open = tk.Button(root, text="(", command=lambda: add_to_calculation("("), width=5, font=("Ariel", 14), bg='#D2D2D2', fg='#555555')
